@@ -167,10 +167,12 @@ def show_prediction_labels_on_image(img_path, predictions):
 
         # There's a bug in Pillow where it blows up with non-UTF-8 text
         # when using the default bitmap font
-        name = name.encode("UTF-8")
-
+        #name = name.encode("UTF-8")
+        # unnecessary
+        
         # Draw a label with a name below the face
-        text_width, text_height = draw.textsize(name)
+        text_width = draw.textlength(name)
+        text_height = 10
         draw.rectangle(((left, bottom - text_height - 10), (right, bottom)), fill=(0, 0, 255), outline=(0, 0, 255))
         draw.text((left + 6, bottom - text_height - 5), name, fill=(255, 255, 255, 255))
 

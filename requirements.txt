@@ -1,4 +1,6 @@
 face_recognition_models
+face_recognition
+scikit-learn
 Click>=6.0
 dlib>=19.3.0
 numpy
